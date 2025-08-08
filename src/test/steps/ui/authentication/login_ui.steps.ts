@@ -2,9 +2,6 @@ import { Given, Then } from '@cucumber/cucumber';
 import { expect } from 'chai';
 import { MobileWorld } from '../../../support/mobile.world';
 
-Given('I launch the SauceDemo app', async function (this: MobileWorld) {
-  await this.launchApp();
-});
 
 Then('I should see username field', async function (this: MobileWorld) {
   expect(await this.loginPage.usernameInput.isDisplayed()).to.be.true;
