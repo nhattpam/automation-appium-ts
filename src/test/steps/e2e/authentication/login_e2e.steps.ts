@@ -1,6 +1,6 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from 'chai';
-import { MobileWorld } from '../../support/mobile.world';
+import { MobileWorld } from '../../../support/mobile.world';
 
 Given('I launch the SauceDemo app', async function (this: MobileWorld) {
   await this.launchApp();

@@ -2,11 +2,15 @@ import { IWorldOptions, setWorldConstructor, World } from '@cucumber/cucumber';
 import { Browser, remote } from 'webdriverio';
 import LoginPage from '../../pages/authentication/login.page';
 import dotenv from 'dotenv';
+import InventoryPage from '../../pages/inventory/inventoryPage';
+import CartPage from '../../pages/cart/cartPage';
 dotenv.config(); // Load biến từ .env
 
 export class MobileWorld extends World {
   driver!: Browser;           // Phiên test Appium
   loginPage!: LoginPage;      // Page Object
+  inventoryPage!: InventoryPage;      // Page Object
+  cartPage!: CartPage;      // Page Object
 
   constructor(options: IWorldOptions) {
     super(options);
@@ -28,6 +32,8 @@ export class MobileWorld extends World {
     });
 
     this.loginPage = new LoginPage(this.driver);
+    this.inventoryPage = new InventoryPage(this.driver);
+    this.cartPage = new CartPage(this.driver);
 }
 
 
